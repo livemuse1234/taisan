@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>DANH SÁCH TÀI SẢN</title>
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-togglecollapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Trang chủ</a>
+
+			</div>
+			
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+		<h1>DANH SÁNH TÀI SẢN</h1>
+		<hr>
+		<h2>Cập nhật tài sản</h2>
+		<p th:text="${error}" style="color: red;"></p>
+	<form action="#" th:action="@{/updateTaiSan}" th:object="${taiSan}" method="POST">
+		<input type="hidden" th:field="*{id}" />
+		<th>Mã tài sản</th>
+			<input type="text" th:field="*{mataisan}" class="form-control mb-4 col-4">
+			<th>Tên tài sản</th>
+			<input type="text" th:field="*{tentaisan}" class="form-control mb-4 col-4">
+			<th>Người sở hữu</th>
+			<input type="text" th:field="*{nguoisohuu}" class="form-control mb-4 col-4">
+			<th>Thể loại</th>
+			<input type="text" th:field="*{theloai}" class="form-control mb-4 col-4">
+			<th>Số lượng</th>
+			<input type="text" th:field="*{soluong}" class="form-control mb-4 col-4">
+			<th>Đơn giá</th>
+			<input type="text" th:field="*{dongia}" class="form-control mb-4 col-4">
+
+
+		<button type="submit" class="btn btn-info col-2"> Cập Nhật Tài Sản</button>
+	</form>
+	<hr>
+	<a th:href="@{/}"> Trở lại trang chủ</a>
+	</div>
+</body>
+
+</html>
